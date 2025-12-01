@@ -1,4 +1,4 @@
-# A website with a counter
+# A Website with a Counter
 
 This project is a website, that has a visitor counter. Very simple!
 
