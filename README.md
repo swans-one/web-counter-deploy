@@ -22,3 +22,11 @@ Run frontend dev server:
 ```
 cd frontend && npm run dev
 ```
+
+# Deploy strategies
+
+Different deploy strategies are managed on different branches, which
+should be kept up to the main branch by rebasing.
+
+This is so that each deploy strategy can include files in the
+repository without having conflicts / confusing duplication.
