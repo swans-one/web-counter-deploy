@@ -7,7 +7,17 @@ DB_PATH = Path("../database/db/database.sqlite").resolve()
 DB_CON = sqlite3.connect(DB_PATH)
 
 def db_increment(scope):
-    pass
+    query = '''
+    UPDATE counter
+    SET current_count = current_count + 1
+    WHERE scope = :scope
+    RETURNING current_count
+    '''
+    cur = DB_CON.cursor()
+    result = cur.execute(query, {"scope": scope})
+    count = result.fetchone()[0]
+    DB_CON.commit()
+    return count
 
 def db_decrement(scope):
     pass
@@ -25,3 +35,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {"count": db_read("default")}
+
+@app.get("/increment")
+async def root():
+    return {"count": db_increment("default")}
