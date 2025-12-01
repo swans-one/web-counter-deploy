@@ -9,7 +9,7 @@
     There have been
   </p>
   <div class="pb-4 text-4xl lg:text-8xl">
-    {data.count}
+    {data.apiResponse.count}
   </div>
   <p class="text-2xl">
     visitors to this page
