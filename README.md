@@ -29,6 +29,12 @@ Run the api dev server:
 cd api && uv run -- fastapi dev main.py
 ```
 
+Run any pending migrations:
+
+```
+cd database && dbmate up
+```
+
 # Deploy strategies
 
 Different deploy strategies are managed on different branches, which
