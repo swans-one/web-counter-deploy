@@ -23,6 +23,12 @@ Run frontend dev server:
 cd frontend && npm run dev
 ```
 
+Run the api dev server:
+
+```
+cd api && uv run -- fastapi dev main.py
+```
+
 # Deploy strategies
 
 Different deploy strategies are managed on different branches, which
