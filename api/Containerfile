@@ -1,0 +1,9 @@
+FROM ghcr.io/astral-sh/uv:trixie-slim
+WORKDIR /app
+COPY main.py pyproject.toml uv.lock .
+
+# Install dependencies
+# (no dev dependencies, and ensure the lockfile doesn't change)
+RUN uv sync --locked
+
+CMD [ "uv", "run", "--", "fastapi", "run", "main.py" ]
