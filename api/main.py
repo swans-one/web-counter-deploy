@@ -1,9 +1,14 @@
 from fastapi import FastAPI
 from pathlib import Path
 
+import os
 import sqlite3
 
-DB_PATH = Path("../database/db/database.sqlite").resolve()
+DB_PATH_FROM_ENV = os.environ.get(
+    "WEB_COUNTER_DB_PATH",
+    "../database/db/database.sqlite"
+)
+DB_PATH = Path(DB_PATH_FROM_ENV).resolve()
 DB_CON = sqlite3.connect(DB_PATH)
 
 def db_increment(scope):
