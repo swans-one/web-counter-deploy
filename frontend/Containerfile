@@ -1,0 +1,18 @@
+FROM node:24-trixie-slim
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json .
+RUN npm ci
+
+# Build the app
+COPY static ./static
+COPY src ./src
+COPY svelte.config.js vite.config.js .
+RUN npm run build
+RUN npm prune --production
+
+# Run the app in production mode
+EXPOSE 3000
+ENV NODE_ENV=production
+CMD [ "node", "build" ]
