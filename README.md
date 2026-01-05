@@ -37,8 +37,26 @@ cd database && dbmate up
 
 # Deploy strategies
 
-Different deploy strategies are managed on different branches, which
-should be kept up to the main branch by rebasing.
+Different deploy strategies are managed in different directories. A
+core tenant of the deploy strategy is that it should be able to be
+managed basically independently of the underlying codebase.
 
-This is so that each deploy strategy can include files in the
-repository without having conflicts / confusing duplication.
+## Podman (and Quadlet)
+
+Under the `podman` directory are the following artifacts.
+
+- Three `Containerfile`s, one for each section of the project:
+  - `Containerfile-database`
+  - `Containerfile-api`
+  - `Containerfile-frontend`
+
+These three `Containerfile`s can each correspond to an image to be
+built. They can all be built using the `build-all.sh` script.
+
+- Scripts for managing the app lifecycle
+  - `build-all.sh` :: Build all the images for the app
+  - `pod-create.sh` :: Create a `pod` and populate it with containers
+  - `pod-start.sh` :: start the pod created from `pod-create.sh`
+
+With these scripts you could start the webserver from scratch with:
+`build-all.sh && pod-create.sh && pod-start.sh`
