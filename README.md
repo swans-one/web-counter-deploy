@@ -43,6 +43,8 @@ managed basically independently of the underlying codebase.
 
 ## Podman (and Quadlet)
 
+### Manual Podman usage:
+
 Under the `podman` directory are the following artifacts.
 
 - Three `Containerfile`s, one for each section of the project:
@@ -60,3 +62,11 @@ built. They can all be built using the `build-all.sh` script.
 
 With these scripts you could start the webserver from scratch with:
 `build-all.sh && pod-create.sh && pod-start.sh`
+
+
+### Podman + Quadlet usage
+
+The quadlet usage assumes you have a host / server set up with the
+project `cp`'d / git pulled into a directory named:
+`/home/deployed/repos/web-counter-deploy` and that you can log into
+the user using ~machinectl~.
