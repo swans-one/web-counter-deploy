@@ -8,6 +8,6 @@ UNITFILE_DEST_DIR="$HOME/.config/containers/systemd"
 mkdir -p $UNITFILE_DEST_DIR
 
 # Copy all the unit files into that directory
-cp "$WORK_DIR/quadlet/*" "$UNITFILE_DEST_DIR"
+cp $WORK_DIR/quadlet/* $UNITFILE_DEST_DIR
 
 systemctl --user daemon-reload
