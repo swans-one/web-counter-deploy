@@ -7,7 +7,7 @@ Before=web-counter-database-init.container web-counter-frontend.container web-co
 After=network-online.target
 
 [Pod]
-PublishPort=3000:3000
+PublishPort=4000:4000
 PodName=web-counter
 Volume=web-counter-database.volume:/app/db
 
