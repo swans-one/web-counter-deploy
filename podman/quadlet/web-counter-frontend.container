@@ -1,0 +1,10 @@
+[Unit]
+Description=Web-counter svelte & sveltekit frontend container
+Wants=web-counter-pod.service
+After=web-counter-pod.service
+PartOf=web-counter-pod.service
+
+[Container]
+ContainerName=web-counter-frontend
+Pod=web-counter
+Image=web-counter-frontend.build

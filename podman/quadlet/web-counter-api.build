@@ -1,0 +1,5 @@
+[Build]
+ImageTag=localhost/web-counter-api:latest
+
+SetWorkingDirectory=/home/deployed/repos/web-counter-deploy/api
+File=/home/deployed/repos/web-counter-deploy/podman/Containerfile-api

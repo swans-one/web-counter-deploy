@@ -1,0 +1,15 @@
+[Unit]
+Description=Web-counter database initialization and migration container
+Wants=web-counter-pod.service
+After=web-counter-pod.service
+PartOf=web-counter-pod.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+[Container]
+ContainerName=web-counter-database-init
+Pod=web-counter
+Environment=DATABASE_URL="sqlite:/app/db/database.sqlite"
+Image=web-counter-database-init.build

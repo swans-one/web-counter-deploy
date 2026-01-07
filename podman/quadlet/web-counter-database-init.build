@@ -1,0 +1,5 @@
+[Build]
+ImageTag=localhost/web-counter-database-init:latest
+
+SetWorkingDirectory=/home/deployed/repos/web-counter-deploy/database
+File=/home/deployed/repos/web-counter-deploy/podman/Containerfile-database

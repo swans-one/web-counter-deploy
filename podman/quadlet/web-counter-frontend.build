@@ -1,0 +1,5 @@
+[Build]
+ImageTag=localhost/web-counter-frontend:latest
+
+SetWorkingDirectory=/home/deployed/repos/web-counter-deploy/frontend
+File=/home/deployed/repos/web-counter-deploy/podman/Containerfile-frontend

@@ -1,0 +1,11 @@
+[Unit]
+Description=Web-counter python fastapi backend api container
+Wants=web-counter-pod.service
+After=web-counter-pod.service
+PartOf=web-counter-pod.service
+
+[Container]
+ContainerName=web-counter-api
+Pod=web-counter
+Environment=WEB_COUNTER_DB_PATH="sqlite:/app/db/database.sqlite"
+Image=web-counter-api.build
