@@ -1,15 +1,15 @@
 [Unit]
 Wants=network-online.target
 
-Wants=web-counter-database-init.service web-counter-frontend.service web-counter-api.service
-Before=web-counter-database-init.service web-counter-frontend.service web-counter-api.service
+Wants=web-counter-database-init.container web-counter-frontend.container web-counter-api.container
+Before=web-counter-database-init.container web-counter-frontend.container web-counter-api.container
 
 After=network-online.target
 
 [Pod]
 PublishPort=3000:3000
 PodName=web-counter
-Volume=web-counter-database.volume
+Volume=web-counter-database.volume:/app/db
 
 [Install]
 WantedBy=default.target

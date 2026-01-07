@@ -1,8 +1,8 @@
 [Unit]
 Description=Web-counter database initialization and migration container
-Wants=web-counter-pod.service
-After=web-counter-pod.service
-PartOf=web-counter-pod.service
+Wants=web-counter.pod
+After=web-counter.pod
+PartOf=web-counter.pod
 
 [Service]
 Type=oneshot
