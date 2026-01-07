@@ -6,6 +6,6 @@ PartOf=web-counter-pod.service
 
 [Container]
 ContainerName=web-counter-api
-Pod=web-counter
+Pod=web-counter.pod
 Environment=WEB_COUNTER_DB_PATH="sqlite:/app/db/database.sqlite"
 Image=web-counter-api.build

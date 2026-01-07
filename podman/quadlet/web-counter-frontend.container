@@ -6,5 +6,5 @@ PartOf=web-counter-pod.service
 
 [Container]
 ContainerName=web-counter-frontend
-Pod=web-counter
+Pod=web-counter.pod
 Image=web-counter-frontend.build

@@ -10,6 +10,6 @@ RemainAfterExit=yes
 
 [Container]
 ContainerName=web-counter-database-init
-Pod=web-counter
+Pod=web-counter.pod
 Environment=DATABASE_URL="sqlite:/app/db/database.sqlite"
 Image=web-counter-database-init.build
