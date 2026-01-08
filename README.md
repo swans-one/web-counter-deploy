@@ -71,7 +71,7 @@ covered in the next section.
 The quadlet usage assumes you have a host / server set up with the
 project `cp`'d / git pulled into a directory named:
 `/home/deployed/repos/web-counter-deploy` and that you can log into
-the `deployed` user using ~machinectl shell deployed@ /bin/bash~ (from
+the `deployed` user using `machinectl shell deployed@ /bin/bash` (from
 the package `systemd-container`).
 
 The quadlet files are contained in the directory `podman/quadlet`. It
@@ -114,7 +114,7 @@ manage these unit files.
 - `quadlet-setup.sh` :: Copies all the unit files into the correct
   place for the `podman-systemd-generator` to find them. Namely
   `$HOME/.config/containers/systemd`. Then runs `daemon-reload`.
-- `quadlet-dryrun.sh` Runs the `podman-systemd-generator` in dry-run
+- `quadlet-dryrun.sh` :: Runs the `podman-systemd-generator` in dry-run
   mode to detect any errors with the syntax/configuraiton of the unit
   files.
 
